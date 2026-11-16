@@ -1,75 +1,78 @@
-# Snack Shop Sales Analysis
+# Snack Shop Sales Dashboard
 
-## Project Overview
-This project analyzes a small snack shop sales dataset to summarize sales revenue, units sold, product performance, and category contribution. The results are presented in an interactive sales dashboard.
+An interactive Power BI dashboard that answers a shop owner's core questions about sales without digging through a spreadsheet. Built as a practice project during my Data Analytics training.
 
-> **Dataset scope:** The supplied workbook contains 7 transaction rows covering 1–4 January 2026. It is a small training/sample dataset, so the findings describe only these records and should not be treated as evidence of long-term business performance.
+![Snack Shop Sales Dashboard](Screenshot%202026-11-16%20022258.png)
+
+> **Dataset scope:** 7 transaction rows covering 1–4 January 2026. This is a small training dataset, so the findings describe only these records and are not evidence of long-term business performance.
 
 ## Business Questions
-- What is the total sales revenue?
-- How many units were sold?
-- Which product generated the highest revenue?
-- Which product sold the highest quantity?
-- Which category contributed more to revenue?
 
-## Dataset
-**Source file:** `1- Project1_SnackShopSales.xlsx`  
-**Worksheet:** `SnackShopSales`
+1. How much revenue came in?
+2. How many items were sold?
+3. Which product earned the most?
+4. Do drinks or snacks perform better?
+5. What sold, and in what quantities?
 
-| Column | Description |
-|---|---|
-| Date | Transaction date |
-| Product | Product name |
-| Category | Product category (Drinks or Snacks) |
-| Quantity | Number of units sold |
-| Unit Price | Selling price per unit |
+## Dashboard Features
 
-A calculated `Total Sales` field is used for revenue analysis:
+- KPI cards: Total Sales and Total Quantity
+- Revenue by product (bar chart)
+- Revenue share by category (pie chart)
+- Quantity sold by product (bar chart)
+- Detail table by date and product
+- Category and Product slicers with a **Reset Filters** button
+- Consistent red color theme
 
-`Total Sales = Quantity × Unit Price`
+## Key Results
 
-## Tools
-- Microsoft Excel — source data review and preparation
-- Power BI — dashboard and visual analysis *(include the PBIX file if the dashboard was built in Power BI)*
-
-## Key Performance Indicators
 | KPI | Result |
 |---|---:|
 | Total Sales Revenue | $5,621 |
 | Total Quantity Sold | 297 units |
-| Number of Products | 6 |
-| Number of Transaction Rows | 7 |
+| Products | 6 |
+| Transaction Rows | 7 |
 | Date Coverage | 1–4 January 2026 |
 
+- **Juice** was the top product: **$2,461** revenue and **107 units**.
+- **Drinks** generated **$3,621 (64.4%)** of revenue; **Snacks** generated **$2,000 (35.6%)**.
 
-## Main Findings
-- **Juice** generated the highest revenue: **$2,461**.
-- **Juice** also had the highest quantity sold: **107 units**.
-- **Drinks** generated **$3,621** (approximately **64.4%**) of total revenue.
-- **Snacks** generated **$2,000** (approximately **35.6%**) of total revenue.
-
-See [`Business_Insights_and_Recommendations.md`](Business_Insights_and_Recommendations.md) for the detailed interpretation and recommendations.
+Full interpretation: [Business_Insights_and_Recommendations.md](Business_Insights_and_Recommendations.md)
 
 ## Data Preparation
-The source workbook contains non-breaking spaces in some headers and text/numeric cells. These should be normalized before analysis, and the `Unit Price` field should be converted to a numeric data type. The preparation checks and calculated-field formulas are documented in [`Data_Cleaning_and_Calculated_Columns.md`](Data_Cleaning_and_Calculated_Columns.md).
 
-## Repository Structure
-```text
-Snack-Shop-Sales-Analysis/
-├── Dataset/
-│   └── SnackShopSales.xlsx
-├── Dashboard/
-│   └── SnackShopSales.pbix          # Add if your dashboard is a Power BI file
-├── Images/
-│   └── Dashboard.png
-├── README.md
-├── Business_Insights_and_Recommendations.md
-└── Data_Cleaning_and_Calculated_Columns.md
-```
+Issues found and fixed while building the report:
 
-## Important Limitations
-- The dataset has only 7 rows and covers 4 days.
-- There is no cost, expense, inventory, or profit field. Therefore, profit, profit margin, and product profitability cannot be calculated from the supplied data.
-- The dashboard screenshot should be checked to ensure that slicers filter all intended visuals consistently.
+- The Total Quantity card showed "$297" because of a currency format I had missed; it now shows a plain number.
+- Some chart titles did not match what the chart actually showed; I corrected them.
+- A duplicate column was hiding in the data; I removed it.
+- The source workbook had non-breaking spaces in some headers and text cells, and `Unit Price` was stored as text in some rows; I converted it to a numeric type.
 
+Details and formulas: [Data_Cleaning_and_Calculated_Columns.md](Data_Cleaning_and_Calculated_Columns.md)
 
+`Total Sales = Quantity × Unit Price`
+
+## Tools
+
+- Microsoft Excel: source data review
+- Power BI: data model, DAX, and dashboard
+
+## Files
+
+| File | Description |
+|---|---|
+| `SnackShopDashboard.pbix` | Power BI dashboard |
+| `1- Project1_SnackShopSales.xlsx` | Source data |
+| `Business_Insights_and_Recommendations.md` | Findings and recommendations |
+| `Data_Cleaning_and_Calculated_Columns.md` | Cleaning steps and calculated columns |
+
+## Limitations
+
+- Only 7 rows over 4 days.
+- No cost, expense, or inventory fields, so profit and margin cannot be calculated. Revenue is not profit.
+
+## What I'd Add Next
+
+- More transactions to show trends over time
+- Cost data for a profit view
+- Stock data to separate low demand from stockouts
