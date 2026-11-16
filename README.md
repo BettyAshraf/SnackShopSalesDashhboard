@@ -41,10 +41,6 @@ A calculated `Total Sales` field is used for revenue analysis:
 | Number of Transaction Rows | 7 |
 | Date Coverage | 1–4 January 2026 |
 
-## Dashboard
-Add the dashboard screenshot to the repository at `Images/Dashboard.png`. It will appear here automatically:
-
-![Snack Shop Sales Dashboard](Images/Dashboard.png)
 
 ## Main Findings
 - **Juice** generated the highest revenue: **$2,461**.
@@ -76,8 +72,4 @@ Snack-Shop-Sales-Analysis/
 - There is no cost, expense, inventory, or profit field. Therefore, profit, profit margin, and product profitability cannot be calculated from the supplied data.
 - The dashboard screenshot should be checked to ensure that slicers filter all intended visuals consistently.
 
-## Author
-Add your name and relevant links here:
-- **Name:** Your Name
-- **LinkedIn:** Your LinkedIn URL
-- **GitHub:** Your GitHub profile URL
+
