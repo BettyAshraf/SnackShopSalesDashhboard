@@ -6,8 +6,7 @@
 - **Original fields:** `Date`, `Product`, `Category`, `Quantity`, `Unit Price`
 - **Source size:** 7 data rows and 5 columns
 
-The documentation below distinguishes issues observed in the supplied workbook from recommended preparation actions. It does not claim that an unprovided Power Query or PBIX file was inspected.
-
+The documentation below distinguishes issues observed in the supplied workbook from recommended preparation actions. 
 ## 2. Data Quality Checks
 
 ### Issue 1 — Extra whitespace / non-breaking spaces
